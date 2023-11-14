@@ -11,6 +11,7 @@ use Reflection\Traits\SearchesForProperties;
 use Reflection\Traits\TraitsHandler;
 use ReflectionClass;
 use ReflectionException;
+use Throwable;
 
 /**
  * @template T
@@ -57,7 +58,7 @@ class ReflectionObject implements IReflectionObject
 
     public function is(string $class): bool
     {
-        return $this->extends($class) || $this->implements($class) || $this->uses($class);
+        return $this->extends($class) || $this->uses($class) || $this->implements($class);
     }
 
     /**
@@ -71,7 +72,7 @@ class ReflectionObject implements IReflectionObject
 
         try {
             return $this->ref->newInstanceArgs($args);
-        } catch (\Throwable $exception) {
+        } catch (Throwable $exception) {
             return null;
         }
     }

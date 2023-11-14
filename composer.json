@@ -8,7 +8,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Reflection\\": "src/"
+      "Reflection\\": "src/",
+      "Tests\\": "tests/"
     }
   },
   "license": "proprietary",
@@ -18,5 +19,8 @@
       "email": "hassan.elzarkawy@aiesec.net"
     }
   ],
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "require-dev": {
+    "phpunit/phpunit": "10.5.x-dev"
+  }
 }

@@ -26,9 +26,17 @@ trait AttributesHandler
             ->all();
     }
 
+    /**
+     * @param string $class
+     * @return bool
+     */
     public function isDecoratedBy(string $class): bool
     {
-        $attributes = $this->ref->getAttributes();
-        return true;
+        return current(
+            array_filter(
+                $this->attributes(),
+                fn (IAttribute $attr) => $attr->name() === $class
+            )
+        ) !== false;
     }
 }

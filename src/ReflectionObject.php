@@ -58,7 +58,7 @@ class ReflectionObject implements IReflectionObject
 
     public function is(string $class): bool
     {
-        return $this->extends($class) || $this->implements($class) || $this->uses($class);
+        return $this->extends($class) || $this->uses($class) || $this->implements($class);
     }
 
     /**

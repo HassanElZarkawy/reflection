@@ -84,4 +84,10 @@ interface IReflectionObject
     public function callFunction(string $functionName, array $arguments = [], array $constructorArgs = []);
 
     public function attributes(): array;
+
+    /**
+     * @param string $attribute
+     * @return bool
+     */
+    public function isDecoratedBy(string $attribute): bool;
 }

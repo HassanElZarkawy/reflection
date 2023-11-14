@@ -36,4 +36,15 @@ class ImplementTest extends TestCase
         $this->assertTrue($reflector->implements(IPlant::class));
         $this->assertTrue($reflector->implementsAny([IPlant::class]));
     }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testIfIsWorksWithImplements()
+    {
+        $reflector = ReflectionObject::of(Flower::class);
+
+        $this->assertTrue($reflector->is(IFlower::class));
+        $this->assertTrue($reflector->is(IPlant::class));
+    }
 }
